@@ -19,7 +19,7 @@ Note: Plugin folder is case-sensitive.
 1. Go to your repository setting **Webhooks**
 2. Then Add webhook.
 3. **Payload URL** you can found in **Kanboard Project Setting (Integrations)**
-4. Click **Let me select individual events.** Radio , make sure Releases Checkbox is selected.
+4. Click **Let me select individual events.** Radio (or **Send me everything**) , make sure Releases Checkbox is selected.
 5. Click **Add webhook** green button.
 
 ## Kanboard Configuration
