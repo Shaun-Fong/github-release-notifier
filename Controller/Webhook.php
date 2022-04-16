@@ -1,9 +1,9 @@
 <?php
 
-namespace Kanboard\Plugin\GithubWebhook\Controller;
+namespace Kanboard\Plugin\GithubReleaseNotifier\Controller;
 
 use Kanboard\Controller\BaseController;
-use Kanboard\Plugin\GithubWebhook\WebhookHandler;
+use Kanboard\Plugin\GithubReleaseNotifier\WebhookHandler;
 
 /**
  * Webhook Controller

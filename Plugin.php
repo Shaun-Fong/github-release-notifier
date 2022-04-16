@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\GithubWebhook;
+namespace Kanboard\Plugin\GithubReleaseNotifier;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Security\Role;
