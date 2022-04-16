@@ -28,5 +28,5 @@ Note: Plugin folder is case-sensitive.
 3. Select **Create a task from an external provider** Next
 4. Select **Github: Release** events
 5. Save
-6. 
+
 Now the task will be automatically create when github release.
