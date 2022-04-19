@@ -2,6 +2,7 @@
 
 namespace Kanboard\Plugin\GithubReleaseNotifier;
 
+use Kanboard\Plugin\GithubReleaseNotifier\Action\TaskCreationColumn;
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Security\Role;
 use Kanboard\Core\Translator;
@@ -10,7 +11,11 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->actionManager->getAction('\Kanboard\Action\TaskCreation')->addEvent(WebhookHandler::EVENT_RELEASED);
+        $taskCreationColumnAction = new TaskCreationColumn($this->container);
+        $this->actionManager->register($taskCreationColumnAction);
+        $taskCreationColumnAction->addEvent(WebhookHandler::EVENT_RELEASED);
+        
+        //$this->actionManager->getAction('\Kanboard\Action\TaskCreation')->addEvent(WebhookHandler::EVENT_RELEASED);
 
         $this->template->hook->attach('template:project:integrations', 'GithubReleaseNotifier:project/integrations');
         $this->route->addRoute('/webhook/github/:project_id/:token', 'Webhook', 'handler', 'GithubReleaseNotifier');
@@ -41,7 +46,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.0';
+        return '1.1.0';
     }
 
     public function getPluginHomepage()

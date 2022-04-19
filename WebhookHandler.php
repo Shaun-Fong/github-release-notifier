@@ -78,8 +78,12 @@ class WebhookHandler extends Base
      */
     public function handleRelease($release)
     {
+        
+        $columnSelected = $this->projectMetadataModel->get($this->request->getIntegerParam('project_id'),"select_column");
+        
         $event = array(
             'project_id' => $this->project_id,
+            'column_id' => $columnSelected,
             'reference' => $release->{'tag_name'},
             'title' => $release->{'name'},
             'description' => $release->{'body'}."\n\n[".t('Github Release').']('.$release->{'html_url'}.')',
